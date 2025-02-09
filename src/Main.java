@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        Jugador jugador = new Jugador();
+        Jugador jugador = new Jugador(args);
         String[] nombresPiezas = Pieza.obtenerPiezasPorCantidad(jugador.getCantidadPiezas());
         List<String> listaPiezas = Arrays.asList(nombresPiezas);
         Collections.shuffle(listaPiezas);
