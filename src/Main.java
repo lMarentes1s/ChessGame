@@ -1,12 +1,18 @@
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
         Jugador jugador = new Jugador(args);
-        String[] nombresPiezas = Pieza.obtenerPiezasPorCantidad(jugador.getCantidadPiezas());
+        String[] nombresPiezas;
+
+        if (jugador.getTipoLista().equals("N")) {
+            nombresPiezas = Pieza.obtenerPiezasPorCantidad(jugador.getCantidadPiezas());
+        } else {
+            nombresPiezas = Pieza.obtenerPiezasPorCantidadConLetras(jugador.getCantidadPiezas());
+        }
+
         List<String> listaPiezas = Arrays.asList(nombresPiezas);
         Collections.shuffle(listaPiezas);
         nombresPiezas = listaPiezas.toArray(new String[0]);
@@ -31,9 +37,5 @@ public class Main {
 
         // Aplicar algoritmo de ordenamiento
         AlgoritmosOrdenamiento.aplicarOrdenamiento(jugador.getAlgoritmoOrdenamiento(), piezas);
-
-
-
-
     }
 }

@@ -9,13 +9,25 @@ public abstract class Pieza {
 
     public static String[] obtenerPiezasPorCantidad(int cantidadPiezas) {
         String[][] piezasPorCantidad = {
-                {"01-Rey"},
-                {"01-Rey", "02-Reina"},
-                {"01-Rey", "02-Reina", "03-Alfil I", "04-Alfil II"},
-                {"01-Rey", "02-Reina", "03-Alfil I", "04-Alfil II", "05-Caballo I", "06-Caballo II"},
-                {"01-Rey", "02-Reina", "03-Alfil I", "04-Alfil II", "05-Caballo I", "06-Caballo II", "07-Torre I", "08-Torre II"},
-                {"01-Rey", "02-Reina", "03-Alfil I", "04-Alfil II", "05-Caballo I", "06-Caballo II", "07-Torre I", "08-Torre II", "09-Peón 1", "10-Peón 2"},
-                {"01-Rey", "02-Reina", "03-Alfil I", "04-Alfil II", "05-Caballo I", "06-Caballo II", "07-Torre I", "08-Torre II", "09-Peón 1", "10-Peón 2", "11-Peón 3", "12-Peón 4", "13-Peón 5", "14-Peón 6", "15-Peón 7", "16-Peón 8"}
+                {"01"},
+                {"01", "02"},
+                {"01", "02", "03", "04"},
+                {"01", "02", "03", "04", "05", "06"},
+                {"01", "02", "03", "04", "05", "06", "07", "08"},
+                {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10"},
+                {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16"}
+        };
+        int index = (cantidadPiezas == 1) ? 0 : (cantidadPiezas == 2) ? 1 : (cantidadPiezas == 4) ? 2 : (cantidadPiezas == 6) ? 3 : (cantidadPiezas == 8) ? 4 : (cantidadPiezas == 10) ? 5 : 6;
+        return piezasPorCantidad[index];
+    }public static String[] obtenerPiezasPorCantidadConLetras(int cantidadPiezas) {
+        String[][] piezasPorCantidad = {
+                {"a"},
+                {"a", "b"},
+                {"a", "b", "c", "d"},
+                {"a", "b", "c", "d", "e", "f"},
+                {"a", "b", "c", "d", "e", "f", "g", "h"},
+                {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"},
+                {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"}
         };
         int index = (cantidadPiezas == 1) ? 0 : (cantidadPiezas == 2) ? 1 : (cantidadPiezas == 4) ? 2 : (cantidadPiezas == 6) ? 3 : (cantidadPiezas == 8) ? 4 : (cantidadPiezas == 10) ? 5 : 6;
         return piezasPorCantidad[index];

@@ -25,7 +25,7 @@ public class Jugador {
             }
 
             this.colorPiezas = args[2].split("=")[1].toLowerCase();
-            if (!colorPiezas.equals("b") && !colorPiezas.equals("n")) {
+            if (!colorPiezas.equals("b") && !colorPiezas.equals("w")) {
                 throw new IllegalArgumentException("Color inválido. Debe ser 'blancas' o 'negras'.");
             }
 
